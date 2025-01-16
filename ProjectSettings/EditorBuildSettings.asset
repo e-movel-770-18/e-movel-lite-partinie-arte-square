@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Near.unity
     guid: 762d5a9ae27d1634a9619ed752219360
   - enabled: 1
-    path: Assets/Scenes/Mediterraine.unity
+    path: Assets/Scenes/Mediterrane.unity
     guid: acbf99bab7e99d74ea47ab15f4babe12
   - enabled: 1
     path: Assets/Scenes/ArtSquare.unity

@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 389353072}
   - component: {fileID: 389353071}
   m_Layer: 5
-  m_Name: PNLmediterraine
+  m_Name: PNLmediterrane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -362,7 +362,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Mediterraine
+          m_StringArgument: Mediterrane
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &389353072
@@ -535,7 +535,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8d588ba3b96f1ed49b78b0f7f6d099b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d65d635277018fc4483064f06d4fb5c8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -588,7 +588,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -369}
-  m_SizeDelta: {x: 390, y: 220}
+  m_SizeDelta: {x: 550, y: 82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &765526984
 MonoBehaviour:
@@ -610,7 +610,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9306e381bab875b40aa9c65bb38ea67a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f80a6deb81c4da478ce035acf71b515, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -967,7 +967,7 @@ GameObject:
   - component: {fileID: 1667683935}
   - component: {fileID: 1667683934}
   m_Layer: 5
-  m_Name: PNLnear
+  m_Name: PNLartsquare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

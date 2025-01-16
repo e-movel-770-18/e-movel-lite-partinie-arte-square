@@ -7,11 +7,14 @@ public class ObjectActivationController : MonoBehaviour
 {
     public bool activeCameraMove;
     public bool isParent;
+    public bool icon;
     public bool isDifferentCameraTarget;
     public GameObject[] cameraTargets;
     public GameObject[] imgGlobby; // Array para armazenar os objetos IMGGlobby
     public Button[] buttons; // Array para armazenar os botões
     private CameraController cameraController;
+    public Color activeColor;
+    public Color inactiveColor;
 
     private void Start()
     {
@@ -43,13 +46,15 @@ public class ObjectActivationController : MonoBehaviour
             {
                 if (imgGlobby[i].activeSelf)
                 {
-                    SetButtonColor(buttons[i], new Color(1, 0.51f, 0, 0.44f)); // rgba(255,130,0,112)
-                    SetChildImagesActive(buttons[i], true);
+                    SetButtonColor(buttons[i], activeColor); // rgba(255,130,0,112)
+                    if(!icon)
+                        SetChildImagesActive(buttons[i], true);
                 }
                 else
                 {
-                    SetButtonColor(buttons[i], new Color(0, 0, 0, 0)); // Transparent
-                    SetChildImagesActive(buttons[i], false);
+                    SetButtonColor(buttons[i], inactiveColor); // Transparent
+                    if(!icon)
+                        SetChildImagesActive(buttons[i], false);
                 }
             }
     }
@@ -77,7 +82,6 @@ public class ObjectActivationController : MonoBehaviour
     {
         ColorBlock cb = button.colors;
         cb.normalColor = color;
-        cb.highlightedColor = color;
         cb.pressedColor = color;
         cb.selectedColor = color;
         button.colors = cb;
@@ -92,5 +96,15 @@ public class ObjectActivationController : MonoBehaviour
                 childImage.gameObject.SetActive(active);
             }
         }
+    }
+
+    public void enterColor(){
+        activeColor = new Color(255f / 255f, 130 / 255f, 0 / 255f, 188 / 255f);
+        inactiveColor = new Color(77 / 255f, 93 / 255f, 85 / 255f, 188 / 255f);
+    }
+
+    public void returnColor(){
+        activeColor = new Color(255f / 255f, 130 / 255f, 0 / 255f, 255 / 255f);
+        inactiveColor = new Color(20 / 255f, 73 / 255f, 108 / 255f, 255 / 255f);
     }
 }
