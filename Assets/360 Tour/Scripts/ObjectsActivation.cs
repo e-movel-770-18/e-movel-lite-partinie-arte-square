@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class ObjectActivationController : MonoBehaviour
 {
     public bool activeCameraMove;
     public bool isParent;
     public bool icon;
+    public bool disableAutoNormalColor;
+    public GameObject imgGloobyParent;
+    public GameObject buttonsParent;
     public bool isDifferentCameraTarget;
     public GameObject[] cameraTargets;
     public GameObject[] imgGlobby; // Array para armazenar os objetos IMGGlobby
@@ -21,6 +25,11 @@ public class ObjectActivationController : MonoBehaviour
         Debug.Log("Start called");
         // Encontra a instância do CameraController na cena
         cameraController = FindObjectOfType<CameraController>();
+
+        if (imgGloobyParent != null && buttonsParent != null)
+        {
+            UpdateImgGlobbyAndButtons();
+        }
 
         // Adiciona a função OnButtonClick como listener para cada botão
         for (int i = 0; i < buttons.Length; i++)
@@ -76,6 +85,20 @@ public class ObjectActivationController : MonoBehaviour
             Debug.Log("Calling cameraMove");
             cameraController.CameraMove(cameraTargets[buttonIndex]);
         }
+    }
+
+    private void UpdateImgGlobbyAndButtons()
+    {
+        var newImgGlobby = imgGloobyParent.GetComponentsInChildren<Image>(true)
+                                          .Where(t => t.name.StartsWith("PNL"))
+                                          .Select(t => t.gameObject)
+                                          .ToArray();
+
+        imgGlobby = imgGlobby.Concat(newImgGlobby).Distinct().ToArray();
+
+        buttons = buttonsParent.GetComponentsInChildren<Button>()
+                               .Where(b => b.name.StartsWith("BTN"))
+                               .ToArray();
     }
 
     private void SetButtonColor(Button button, Color color)
